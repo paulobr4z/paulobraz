@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #111827;
+    background: #040405;
     color: #fff;
     -webkit-font-smoothing: antialiased;
   }
@@ -30,8 +30,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button {
-    font-family: "Poppins", sans-serif;
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Michroma', sans-serif;
     font-weight: 400;
     font-size: 18px;
   }
