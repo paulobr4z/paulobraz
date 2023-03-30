@@ -1,14 +1,18 @@
 import { GoToTop } from "@/components/GoToTop";
 import { Header } from "@/components/Header";
 import { Skills } from "@/constants";
-import { HomeContainer, MainContent, Section, SkillsContent, Wrapper } from "./styles";
+import { ArrowUpRight } from "phosphor-react";
+import { ContactSection, HomeContainer, MainContent, ProjectsSection, Section, SkillsContent, SkillsSection, Wrapper } from "./styles";
 
 export function HomeContent() {
   return (
     <HomeContainer>
-      <Section>
+      <Section id="top">
         <Header />
         <MainContent>
+          <div className="bg-video">
+            <video src="/videos/bg-video.mp4" playsInline autoPlay muted loop />
+          </div>
           <div className="title">
             <p>What’s up?</p>
             <p>I am Paulo Braz</p>
@@ -16,26 +20,21 @@ export function HomeContent() {
           </div>
         </MainContent>
       </Section>
-      <Section id="projects" backgroundColor="#09090B">
-        <Wrapper>
+      <ProjectsSection id="projects">
+        <div className="wrapper">
           <div className="unilink">
             <p>projects</p>
-            {/* <img src="/images/unilink.png" alt="unilink" /> */}
           </div>
-        </Wrapper>
-      </Section>
+        </div>
+      </ProjectsSection>
       <Section id="experience">
         <Wrapper>
           <p>experience</p>
         </Wrapper>
       </Section>
-      <Section 
-        id="skills" 
-        backgroundColor="#09090B"
-        height="initial"
-      >
-        <Wrapper padding="120px 0">
-          <h1>Skills</h1>
+      <SkillsSection id="skills">
+        <div className="wrapper">
+          <h2>Skills</h2>
           <SkillsContent>
             {Skills.map((item, index) => (
               <div className="skill" key={`skill${index}`}>
@@ -46,13 +45,37 @@ export function HomeContent() {
               </div>
             ))}
           </SkillsContent>
-        </Wrapper>
-      </Section>
-      <Section id="contact">
-        <Wrapper>
-          <p>contact</p>
-        </Wrapper>
-      </Section>
+        </div>
+      </SkillsSection>
+      <ContactSection id="contact">
+        <div className="wrapper">
+          <h2>Let's start a project together?</h2>
+          <a href="https://www.linkedin.com/in/paulobr4z/" target="_blank" rel="noreferrer">
+            <span>
+              <p>LINKEDIN</p>
+              <ArrowUpRight size={44} weight="bold" />
+            </span>
+          </a>
+          <a href="https://github.com/paulobr4z" target="_blank" rel="noreferrer">
+            <span>
+              <p>GITHUB</p>
+              <ArrowUpRight size={44} weight="bold" />
+            </span>
+          </a>
+          <a href="https://wa.me/5594981147978" target="_blank" rel="noreferrer">
+            <span>
+              <p>WHATSAPP</p>
+              <ArrowUpRight size={44} weight="bold" />
+            </span>
+          </a>
+          <a href="mailto:paulo.braz.araujo@gmail.com" target="_blank" rel="noreferrer">
+            <span>
+              <p>EMAIL</p>
+              <ArrowUpRight size={44} weight="bold" />
+            </span>
+          </a>
+        </div>
+      </ContactSection>
       <GoToTop />
     </HomeContainer>
   )  

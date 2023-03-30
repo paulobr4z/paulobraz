@@ -7,7 +7,7 @@ export function GoToTop() {
   }
   return (
     <GoToTopContainer onClick={goTop}>
-      <ArrowUp size={20} color="#ffffff" />
+      <ArrowUp size={20} color="#ffffff" weight="bold" />
     </GoToTopContainer>
   )  
 }
