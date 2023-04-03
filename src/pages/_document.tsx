@@ -55,8 +55,10 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
 
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QK2DB5G9KR"></Script>
-          <Script>
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QK2DB5G9KR" 
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
             {
               `window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
