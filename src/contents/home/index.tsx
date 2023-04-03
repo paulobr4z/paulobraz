@@ -1,6 +1,6 @@
 import { GoToTop } from "@/components/GoToTop";
 import { Header } from "@/components/Header";
-import { Skills } from "@/constants";
+import { Projects, Skills } from "@/constants";
 import { ArrowUpRight } from "phosphor-react";
 import { ContactSection, ExperienceSection, HomeContainer, MainContent, ProjectsSection, Section, SkillsContent, SkillsSection, Wrapper } from "./styles";
 
@@ -25,14 +25,31 @@ export function HomeContent() {
           <h2>Projects</h2>
         </div>
         <div className="wrapper">
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
-          <div className="project"></div>
+          {Projects.map(project => (
+            <div className="project" key={project.name}>
+              <img src={project.image} alt={project.name} />
+              <div className="hover">
+                <h3>{project.title}</h3>
+                <span>
+                  <a href={`${project.link}`}
+                    target="_blank" rel="noopener noreferrer"
+                  >
+                    <p>link</p>
+                  </a>
+                  {project.github && (
+                    <a href={`${project.github}`}
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <p>github</p>
+                    </a>
+                  )}
+                </span>
+                <span>
+                  {project.tags.map(tag => <p key={tag}>#{tag}</p>)}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </ProjectsSection>
       <ExperienceSection id="experience">

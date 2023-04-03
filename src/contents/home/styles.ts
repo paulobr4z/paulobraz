@@ -49,7 +49,6 @@ export const MainContent = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: red;
   }
 
   .bg-video::after {
@@ -129,16 +128,12 @@ export const ProjectsSection = styled.section`
 
   .wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: 1440px;
     gap: 8px;
-
-    @media (max-width: 1480px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
 
     @media (max-width: 1160px) {
       grid-template-columns: repeat(2, 1fr);
@@ -149,8 +144,65 @@ export const ProjectsSection = styled.section`
     }
 
     .project {
-      height: 320px;
-      background-color: rebeccapurple;
+      position: relative;
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      padding: 2px;
+      height: 100%;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+        aspect-ratio: 16/9;
+      }
+
+      .hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(1,1,1,0.8);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 32px;
+        border-radius: 8px;
+        opacity: 0;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .hover:hover {
+        opacity: 1;
+      }
+
+      .hover span {
+        display: flex;
+        gap: 8px;
+      }
+
+      .hover h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+      }
+
+      .hover a {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .hover a:hover {
+        text-decoration: underline;
+      }
+
+      .hover p {
+        font-family: "Poppins", sans-serif;
+      }
     }
   }
 `;
